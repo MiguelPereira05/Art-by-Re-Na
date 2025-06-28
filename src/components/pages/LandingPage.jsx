@@ -7,7 +7,7 @@ import Card from "../Card/Card";
 import Socials from "../Socials";
 import JollyRoger from "../../assets/JollyRoger.jpg";
 import Chopper from "../../assets/Chopper.jpg";
-import SelfSketch from "../../assets/SelfSketch.jpg";
+import SelfSketch from "../../assets/SelfSketch1.jpg";
 import Sketch from "../../assets/Sketch.jpg";
 import Drawing from "../../assets/Drawing.jpg";
 import Capivara1 from "../../assets/Capivara1.jpg";
