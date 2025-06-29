@@ -54,7 +54,7 @@ export default function Gallery({ appLang, setAppLang }) {
           >
             {art.imageUrl && (
               <img
-                src={`https://artbyrena.onrender.com${art.imageUrl}`}
+                src={art.imageUrl}
                 alt={appLang === "pt-PT" ? art.title_pt : art.title_en}
                 className="w-full h-48 sm:h-64 object-cover rounded-xl shadow-md transition-all duration-300 ease-in-out"
               />
@@ -75,7 +75,7 @@ export default function Gallery({ appLang, setAppLang }) {
             >
               {art.imageUrl && (
                 <img
-                  src={`http://localhost:5000${art.imageUrl}`}
+                  src={art.imageUrl}
                   alt={appLang === "pt-PT" ? art.title_pt : art.title_en}
                   className="w-full h-32 sm:h-48 object-cover rounded-lg mb-2"
                 />
