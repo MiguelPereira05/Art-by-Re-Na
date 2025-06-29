@@ -23,7 +23,7 @@ export default function Admin({ appLang, setAppLang }) {
   // Password modal logic
   async function handleAuthSubmit(e) {
     e.preventDefault();
-    const res = await fetch("http://localhost:5000/auth/login", {
+    const res = await fetch("https://artbyrena.onrender.com/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password: inputPassword }),
@@ -40,7 +40,7 @@ export default function Admin({ appLang, setAppLang }) {
   // Fetch artworks
   useEffect(() => {
     if (!showAuth) {
-      fetch("http://localhost:5000/gallery")
+      fetch("https://artbyrena.onrender.com/gallery")
         .then((res) => res.json())
         .then(data => {
           console.log("Fetched artworks:", data);
@@ -81,15 +81,15 @@ export default function Admin({ appLang, setAppLang }) {
 
     const method = editingId ? "PUT" : "POST";
     const url = editingId
-      ? `http://localhost:5000/gallery/${editingId}`
-      : "http://localhost:5000/gallery";
+      ? `https://artbyrena.onrender.com/gallery/${editingId}`
+      : "https://artbyrena.onrender.com/gallery";
     const res = await fetch(url, {
       method,
       body: formData,
     });
     if (res.ok) {
       // Refresh artworks
-      fetch("http://localhost:5000/gallery")
+      fetch("https://artbyrena.onrender.com/gallery")
         .then((res) => res.json())
         .then(setArtworks);
       setForm({
@@ -128,7 +128,7 @@ export default function Admin({ appLang, setAppLang }) {
   // Handle delete button
   async function handleDelete(id) {
     if (window.confirm("Are you sure you want to delete this artwork?")) {
-      await fetch(`http://localhost:5000/gallery/${id}`, { method: "DELETE" });
+      await fetch(`https://artbyrena.onrender.com/gallery/${id}`, { method: "DELETE" });
       setArtworks((arts) => arts.filter((a) => a._id !== id));
       if (editingId === id) {
         setEditingId(null);
@@ -316,7 +316,7 @@ export default function Admin({ appLang, setAppLang }) {
           >
             {art.imageUrl && (
               <img
-                src={`http://localhost:5000${art.imageUrl}`}
+                src={`https://artbyrena.onrender.com${art.imageUrl}`}
                 alt={art.title_en || art.title_pt}
                 className="w-32 h-32 md:w-48 md:h-48 object-cover rounded-lg mb-4"
               />

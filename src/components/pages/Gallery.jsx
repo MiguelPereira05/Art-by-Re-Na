@@ -19,7 +19,7 @@ export default function Gallery({ appLang, setAppLang }) {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/gallery")
+    fetch("https://artbyrena.onrender.com/gallery")
       .then((res) => res.json())
       .then((data) => {
         setArtworks(data);
@@ -54,7 +54,7 @@ export default function Gallery({ appLang, setAppLang }) {
           >
             {art.imageUrl && (
               <img
-                src={`http://localhost:5000${art.imageUrl}`}
+                src={`https://artbyrena.onrender.com${art.imageUrl}`}
                 alt={appLang === "pt-PT" ? art.title_pt : art.title_en}
                 className="w-full h-48 sm:h-64 object-cover rounded-xl shadow-md transition-all duration-300 ease-in-out"
               />
