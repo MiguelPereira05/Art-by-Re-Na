@@ -50,7 +50,7 @@ router.post("/", upload.single("image"), async (req, res) => {
     size_en, size_pt,
     available, description_en, description_pt
   } = req.body;
-  const imageUrl = req.file ? `/uploads/${req.file.filename}` : "";
+  const imageUrl = req.file ? req.file.filename : "";
   const artwork = new Artwork({
     title_en, 
     title_pt,
@@ -82,7 +82,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
     available,
     description_en, description_pt
   };
-  if (req.file) update.imageUrl = `/uploads/${req.file.filename}`;
+  if (req.file) update.imageUrl = req.file.filename;
   const artwork = await Artwork.findByIdAndUpdate(req.params.id, update, { new: true });
   if (!artwork) return res.status(404).json({ error: "Not found" });
   res.json(artwork);

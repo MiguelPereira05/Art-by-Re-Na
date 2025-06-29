@@ -316,7 +316,7 @@ export default function Admin({ appLang, setAppLang }) {
           >
             {art.imageUrl && (
               <img
-                src={`https://artbyrena.onrender.com${art.imageUrl}`}
+                src={art.imageUrl}
                 alt={art.title_en || art.title_pt}
                 className="w-32 h-32 md:w-48 md:h-48 object-cover rounded-lg mb-4"
               />
