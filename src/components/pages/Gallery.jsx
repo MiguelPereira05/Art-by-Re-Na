@@ -56,7 +56,7 @@ export default function Gallery({ appLang, setAppLang }) {
               <img
                 src={art.imageUrl}
                 alt={appLang === "pt-PT" ? art.title_pt : art.title_en}
-                className="w-full h-48 sm:h-64 object-cover rounded-xl shadow-md transition-all duration-300 ease-in-out"
+                className="w-full h-60 sm:h-96 object-cover rounded-xl shadow-md transition-all duration-300 ease-in-out"
               />
             )}
             <h2 className="text-lg sm:text-xl font-semibold text-center mt-2">
@@ -69,7 +69,7 @@ export default function Gallery({ appLang, setAppLang }) {
                 w-11/12 sm:w-80 bg-stone-900 bg-opacity-95 text-white p-4 sm:p-6 rounded-xl shadow-2xl border-2 border-stone-400
                 flex flex-col items-center
                 transition-all duration-300 ease-in-out
-                ${hovered === idx ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"}
+                ${hovered === idx ? "opacity-100 scale-105 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"}
               `}
               style={{ minWidth: "0", maxWidth: "95vw" }}
             >
